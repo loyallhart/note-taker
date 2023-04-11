@@ -1,7 +1,17 @@
 [
     {
-        "title":"Do Homework",
-        "text":"Complete by Tuesday",
+        "title": "Do Homework",
+        "text": "Complete by Tuesday",
         "id": "uuidv4()"
+    },
+    {
+        "title": "Test",
+        "text": "test\n",
+        "id": "ea050a70-8a83-4785-9e24-862cb1acb3fa"
+    },
+    {
+        "title": "Workout",
+        "text": "workout before tuesday",
+        "id": "039431eb-bcd8-4e96-a7a2-749047e45883"
     }
 ]

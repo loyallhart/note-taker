@@ -8,7 +8,6 @@ const {readFromFile,
 // GET Route for notes
 notes.get('/', (req, res) => {
   readFromFile('./db/db.json').then((data) => {
-    console.log(`Raw data in db is: ${data}`);
     res.json(JSON.parse(data));
   })
 });
@@ -57,7 +56,7 @@ notes.post('/', (req, res) => {
     readAndAppend(newNote, './db/db.json');
     res.json(`Note added successfully 🚀`);
   } else {
-    res.error('Error in adding note');
+    res.error('Error note could not be added');
   }
 });
 
