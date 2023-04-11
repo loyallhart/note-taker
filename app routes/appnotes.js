@@ -5,10 +5,10 @@ const {readFromFile,
      writeToFile,
 } = require('../helpers/fsUtils');
 
-// GET Route for the notes
+// GET Route for notes
 notes.get('/', (req, res) => {
   readFromFile('./db/db.json').then((data) => {
-    // console.log(`Raw data in db is: ${data}`);
+    console.log(`Raw data in db is: ${data}`);
     res.json(JSON.parse(data));
   })
 });
@@ -35,15 +35,13 @@ notes.delete('/:id', (req, res) => {
       // Make a new array notes other than the one with the ID provided in URL
       const result = json.filter((note) => note.id !== generatedId);
 
-      // Save array to fs
       writeToFile('./db/db.json', result);
 
-      // Respond to the DELETE request
       res.json(`Item ${generatedId} has been deleted 🗑️`);
     });
 });
 
-// POST Route for a new UX/UI note
+// POST Route - new UX/UI note
 notes.post('/', (req, res) => {
   console.log(req.body);
 
